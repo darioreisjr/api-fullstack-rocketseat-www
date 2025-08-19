@@ -9,5 +9,5 @@
   "keywords": [],
   "author": "Dario Reis",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }
