@@ -1,7 +1,9 @@
 import http from "node:http"
 
 const server = http.createServer((request, response) => {
-    return response.end("Sucesso!")
+    const {method} = request
+
+    return response.end("Método " + method)
 })
 
 server.listen(9374)
