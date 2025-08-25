@@ -1,3 +1,5 @@
+import { parseRoutePath } from './utils/parseRoutePath.js'
+
 export const routes = [
     {
         method: "GET",
@@ -18,8 +20,13 @@ export const routes = [
         method: "DELETE",
         path: "/products/:id",
         controller: (request, response) => {
-            return response.end("Deletando produto!")
+            return response.end("Deletando produto com id: " + request.params.id)
         }
     },
 
-]
+].map((route) => {
+    return {
+        ...route,
+        path: new RegExp(parseRoutePath(route.path))
+    }
+})
